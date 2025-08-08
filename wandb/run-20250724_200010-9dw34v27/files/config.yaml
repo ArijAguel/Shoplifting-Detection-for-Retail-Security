@@ -1,0 +1,112 @@
+wandb_version: 1
+
+dataset:
+  desc: null
+  value: PoseLift
+seed:
+  desc: null
+  value: 999
+device:
+  desc: null
+  value: cpu
+model_lr:
+  desc: null
+  value: 0.001
+epochs:
+  desc: null
+  value: 10
+model_optimizer:
+  desc: null
+  value: adamx
+model_sched:
+  desc: null
+  value: exp_decay
+_wandb:
+  desc: null
+  value:
+    python_version: 3.8.13
+    cli_version: 0.16.6
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1753383610.0
+    t:
+      1:
+      - 1
+      - 5
+      - 53
+      - 55
+      2:
+      - 1
+      - 5
+      - 53
+      - 55
+      3:
+      - 3
+      - 13
+      - 15
+      - 16
+      - 23
+      4: 3.8.13
+      5: 0.16.6
+      8:
+      - 3
+      - 5
+      13: windows-amd64
+actual_seed:
+  desc: null
+  value: 74937821560500
+pose_shape:
+  desc: null
+  value:
+  - 2
+  - 24
+  - 18
+hidden_channels:
+  desc: null
+  value: 0
+K:
+  desc: null
+  value: 8
+L:
+  desc: null
+  value: 1
+R:
+  desc: null
+  value: 3.0
+actnorm_scale:
+  desc: null
+  value: 1.0
+flow_permutation:
+  desc: null
+  value: permute
+flow_coupling:
+  desc: null
+  value: affine
+LU_decomposed:
+  desc: null
+  value: true
+learn_top:
+  desc: null
+  value: false
+edge_importance:
+  desc: null
+  value: false
+temporal_kernel_size:
+  desc: null
+  value: null
+strategy:
+  desc: null
+  value: uniform
+max_hops:
+  desc: null
+  value: 8
+model_parameters:
+  desc: null
+  value: 0.616
+train_samples:
+  desc: null
+  value: 22536
+test_samples:
+  desc: null
+  value: 2942

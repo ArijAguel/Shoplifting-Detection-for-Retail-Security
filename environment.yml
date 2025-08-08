@@ -1,0 +1,25 @@
+name: STG-NF
+channels:
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.8.13
+  - pip=22.2.2
+  - numpy=1.23.3
+  - scipy=1.9.3
+  - matplotlib=3.5.3
+  - scikit-learn=1.1.3
+  - pandas
+  - pytorch=1.10.1
+  - torchvision=0.11.2
+  - torchaudio=0.10.1
+  - tensorboard=2.8.0
+  - aiohttp
+  - requests
+  - grpcio
+  - pyqt
+  - tqdm
+  - joblib
+  - typing_extensions
+  - pip:
+      - setuptools==59.5.0

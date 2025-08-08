@@ -1,0 +1,44 @@
+{
+    "os": "Windows-10-10.0.26100-SP0",
+    "python": "3.8.13",
+    "heartbeatAt": "2025-07-23T22:02:00.604096",
+    "startedAt": "2025-07-23T22:01:59.708515",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--dataset",
+        "PoseLift",
+        "--device",
+        "cpu"
+    ],
+    "state": "running",
+    "program": "train_eval.py",
+    "codePathLocal": "train_eval.py",
+    "codePath": "train_eval.py",
+    "host": "LAPTOP-N4DAKN1N",
+    "username": "arija",
+    "executable": "C:\\Users\\arija\\anaconda3\\envs\\STG-NF\\python.exe",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 2803.0,
+        "min": 0.0,
+        "max": 2803.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2803.0,
+            "min": 0.0,
+            "max": 2803.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 475.3684730529785,
+            "used": 364.23364639282227
+        }
+    },
+    "memory": {
+        "total": 15.698863983154297
+    }
+}

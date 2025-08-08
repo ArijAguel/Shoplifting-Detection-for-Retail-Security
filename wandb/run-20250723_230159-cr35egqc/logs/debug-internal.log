@@ -1,0 +1,244 @@
+2025-07-23 23:01:59,723 INFO    StreamThr :10064 [internal.py:wandb_internal():86] W&B internal server running at pid: 10064, started at: 2025-07-23 23:01:59.722131
+2025-07-23 23:01:59,725 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: status
+2025-07-23 23:01:59,728 INFO    WriterThread:10064 [datastore.py:open_for_write():87] open: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\run-cr35egqc.wandb
+2025-07-23 23:01:59,732 DEBUG   SenderThread:10064 [sender.py:send():379] send: header
+2025-07-23 23:01:59,732 DEBUG   SenderThread:10064 [sender.py:send():379] send: run
+2025-07-23 23:02:00,383 INFO    SenderThread:10064 [dir_watcher.py:__init__():211] watching files in: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files
+2025-07-23 23:02:00,383 INFO    SenderThread:10064 [sender.py:_start_run_threads():1124] run started: cr35egqc with start time 1753308119.72213
+2025-07-23 23:02:00,392 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: check_version
+2025-07-23 23:02:00,392 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: check_version
+2025-07-23 23:02:00,583 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: run_start
+2025-07-23 23:02:00,599 DEBUG   HandlerThread:10064 [system_info.py:__init__():26] System info init
+2025-07-23 23:02:00,599 DEBUG   HandlerThread:10064 [system_info.py:__init__():41] System info init done
+2025-07-23 23:02:00,599 INFO    HandlerThread:10064 [system_monitor.py:start():194] Starting system monitor
+2025-07-23 23:02:00,599 INFO    SystemMonitor:10064 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2025-07-23 23:02:00,599 INFO    HandlerThread:10064 [system_monitor.py:probe():214] Collecting system info
+2025-07-23 23:02:00,604 INFO    SystemMonitor:10064 [interfaces.py:start():190] Started cpu monitoring
+2025-07-23 23:02:00,604 DEBUG   HandlerThread:10064 [system_info.py:probe():150] Probing system
+2025-07-23 23:02:00,604 DEBUG   HandlerThread:10064 [system_info.py:probe():198] Probing system done
+2025-07-23 23:02:00,604 INFO    SystemMonitor:10064 [interfaces.py:start():190] Started disk monitoring
+2025-07-23 23:02:00,604 DEBUG   HandlerThread:10064 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.26100-SP0', 'python': '3.8.13', 'heartbeatAt': '2025-07-23T22:02:00.604096', 'startedAt': '2025-07-23T22:01:59.708515', 'docker': None, 'cuda': None, 'args': ('--dataset', 'PoseLift', '--device', 'cpu'), 'state': 'running', 'program': 'train_eval.py', 'codePathLocal': 'train_eval.py', 'codePath': 'train_eval.py', 'host': 'LAPTOP-N4DAKN1N', 'username': 'arija', 'executable': 'C:\\Users\\arija\\anaconda3\\envs\\STG-NF\\python.exe', 'cpu_count': 4, 'cpu_count_logical': 8, 'cpu_freq': {'current': 2803.0, 'min': 0.0, 'max': 2803.0}, 'cpu_freq_per_core': [{'current': 2803.0, 'min': 0.0, 'max': 2803.0}], 'disk': {'/': {'total': 475.3684730529785, 'used': 364.23364639282227}}, 'memory': {'total': 15.698863983154297}}
+2025-07-23 23:02:00,604 INFO    HandlerThread:10064 [system_monitor.py:probe():224] Finished collecting system info
+2025-07-23 23:02:00,612 INFO    HandlerThread:10064 [system_monitor.py:probe():227] Publishing system info
+2025-07-23 23:02:00,612 INFO    SystemMonitor:10064 [interfaces.py:start():190] Started memory monitoring
+2025-07-23 23:02:00,615 DEBUG   HandlerThread:10064 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2025-07-23 23:02:00,623 INFO    SystemMonitor:10064 [interfaces.py:start():190] Started network monitoring
+2025-07-23 23:02:01,392 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\conda-environment.yaml
+2025-07-23 23:02:02,894 DEBUG   HandlerThread:10064 [system_info.py:_save_conda():222] Saving conda packages done
+2025-07-23 23:02:02,896 INFO    HandlerThread:10064 [system_monitor.py:probe():229] Finished publishing system info
+2025-07-23 23:02:02,913 DEBUG   SenderThread:10064 [sender.py:send():379] send: files
+2025-07-23 23:02:02,913 INFO    SenderThread:10064 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2025-07-23 23:02:03,145 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: python_packages
+2025-07-23 23:02:03,145 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: stop_status
+2025-07-23 23:02:03,145 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: python_packages
+2025-07-23 23:02:03,146 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: internal_messages
+2025-07-23 23:02:03,146 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: stop_status
+2025-07-23 23:02:03,405 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\conda-environment.yaml
+2025-07-23 23:02:03,405 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\wandb-metadata.json
+2025-07-23 23:02:03,405 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\requirements.txt
+2025-07-23 23:02:03,523 DEBUG   SenderThread:10064 [sender.py:send():379] send: telemetry
+2025-07-23 23:02:03,523 DEBUG   SenderThread:10064 [sender.py:send():379] send: config
+2025-07-23 23:02:03,993 INFO    wandb-upload_0:10064 [upload_job.py:push():131] Uploaded file C:\Users\arija\AppData\Local\Temp\tmpraeqjjrhwandb\f5hxdrqn-wandb-metadata.json
+2025-07-23 23:02:04,413 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:02:05,048 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: status_report
+2025-07-23 23:02:06,424 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:02:08,431 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:02:10,102 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: status_report
+2025-07-23 23:02:10,456 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:02:12,463 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:02:14,468 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:02:15,139 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: status_report
+2025-07-23 23:02:15,495 DEBUG   SenderThread:10064 [sender.py:send():379] send: config
+2025-07-23 23:02:15,529 DEBUG   SenderThread:10064 [sender.py:send():379] send: config
+2025-07-23 23:02:16,482 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:02:18,156 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: internal_messages
+2025-07-23 23:02:18,157 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: stop_status
+2025-07-23 23:02:18,158 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: stop_status
+2025-07-23 23:02:18,490 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:02:20,382 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: status_report
+2025-07-23 23:02:20,507 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:02:25,430 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: status_report
+2025-07-23 23:02:30,455 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: status_report
+2025-07-23 23:02:31,587 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\config.yaml
+2025-07-23 23:02:33,156 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: stop_status
+2025-07-23 23:02:33,158 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: internal_messages
+2025-07-23 23:02:33,158 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: stop_status
+2025-07-23 23:02:36,539 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: status_report
+2025-07-23 23:02:41,581 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: status_report
+2025-07-23 23:02:46,604 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: status_report
+2025-07-23 23:02:48,152 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: stop_status
+2025-07-23 23:02:48,153 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: stop_status
+2025-07-23 23:02:48,172 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: internal_messages
+2025-07-23 23:02:52,440 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: status_report
+2025-07-23 23:02:54,285 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: partial_history
+2025-07-23 23:02:54,288 DEBUG   SenderThread:10064 [sender.py:send():379] send: history
+2025-07-23 23:02:54,289 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: summary_record
+2025-07-23 23:02:54,291 INFO    SenderThread:10064 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-07-23 23:02:54,789 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\wandb-summary.json
+2025-07-23 23:02:55,790 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:02:57,441 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: status_report
+2025-07-23 23:02:57,798 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:02:59,806 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:03:00,637 DEBUG   SystemMonitor:10064 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2025-07-23 23:03:00,639 DEBUG   SenderThread:10064 [sender.py:send():379] send: stats
+2025-07-23 23:03:01,821 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:03:02,651 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: status_report
+2025-07-23 23:03:03,155 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: stop_status
+2025-07-23 23:03:03,155 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: stop_status
+2025-07-23 23:03:03,186 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: internal_messages
+2025-07-23 23:03:03,824 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:03:05,840 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:03:07,843 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: status_report
+2025-07-23 23:03:07,856 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:03:09,871 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:03:11,888 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:03:12,981 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: status_report
+2025-07-23 23:03:13,892 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:03:15,791 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: partial_history
+2025-07-23 23:03:15,791 DEBUG   SenderThread:10064 [sender.py:send():379] send: history
+2025-07-23 23:03:15,791 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: summary_record
+2025-07-23 23:03:15,791 INFO    SenderThread:10064 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-07-23 23:03:15,812 DEBUG   SenderThread:10064 [sender.py:send():379] send: telemetry
+2025-07-23 23:03:15,828 DEBUG   SenderThread:10064 [sender.py:send():379] send: exit
+2025-07-23 23:03:15,828 INFO    SenderThread:10064 [sender.py:send_exit():586] handling exit code: 1
+2025-07-23 23:03:15,828 INFO    SenderThread:10064 [sender.py:send_exit():588] handling runtime: 75
+2025-07-23 23:03:15,828 INFO    SenderThread:10064 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-07-23 23:03:15,828 INFO    SenderThread:10064 [sender.py:send_exit():594] send defer
+2025-07-23 23:03:15,828 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: defer
+2025-07-23 23:03:15,828 INFO    HandlerThread:10064 [handler.py:handle_request_defer():172] handle defer: 0
+2025-07-23 23:03:15,828 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: defer
+2025-07-23 23:03:15,828 INFO    SenderThread:10064 [sender.py:send_request_defer():610] handle sender defer: 0
+2025-07-23 23:03:15,828 INFO    SenderThread:10064 [sender.py:transition_state():614] send defer: 1
+2025-07-23 23:03:15,828 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: defer
+2025-07-23 23:03:15,828 INFO    HandlerThread:10064 [handler.py:handle_request_defer():172] handle defer: 1
+2025-07-23 23:03:15,831 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: defer
+2025-07-23 23:03:15,831 INFO    SenderThread:10064 [sender.py:send_request_defer():610] handle sender defer: 1
+2025-07-23 23:03:15,831 INFO    SenderThread:10064 [sender.py:transition_state():614] send defer: 2
+2025-07-23 23:03:15,831 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: defer
+2025-07-23 23:03:15,831 INFO    HandlerThread:10064 [handler.py:handle_request_defer():172] handle defer: 2
+2025-07-23 23:03:15,831 INFO    HandlerThread:10064 [system_monitor.py:finish():203] Stopping system monitor
+2025-07-23 23:03:15,831 DEBUG   SystemMonitor:10064 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2025-07-23 23:03:15,831 INFO    HandlerThread:10064 [interfaces.py:finish():202] Joined cpu monitor
+2025-07-23 23:03:15,831 DEBUG   SystemMonitor:10064 [system_monitor.py:_start():183] Publishing last batch of metrics
+2025-07-23 23:03:15,831 INFO    HandlerThread:10064 [interfaces.py:finish():202] Joined disk monitor
+2025-07-23 23:03:15,831 INFO    HandlerThread:10064 [interfaces.py:finish():202] Joined memory monitor
+2025-07-23 23:03:15,831 INFO    HandlerThread:10064 [interfaces.py:finish():202] Joined network monitor
+2025-07-23 23:03:15,831 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: defer
+2025-07-23 23:03:15,831 INFO    SenderThread:10064 [sender.py:send_request_defer():610] handle sender defer: 2
+2025-07-23 23:03:15,831 INFO    SenderThread:10064 [sender.py:transition_state():614] send defer: 3
+2025-07-23 23:03:15,831 DEBUG   SenderThread:10064 [sender.py:send():379] send: stats
+2025-07-23 23:03:15,831 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: defer
+2025-07-23 23:03:15,831 INFO    HandlerThread:10064 [handler.py:handle_request_defer():172] handle defer: 3
+2025-07-23 23:03:15,831 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: defer
+2025-07-23 23:03:15,831 INFO    SenderThread:10064 [sender.py:send_request_defer():610] handle sender defer: 3
+2025-07-23 23:03:15,831 INFO    SenderThread:10064 [sender.py:transition_state():614] send defer: 4
+2025-07-23 23:03:15,831 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: defer
+2025-07-23 23:03:15,831 INFO    HandlerThread:10064 [handler.py:handle_request_defer():172] handle defer: 4
+2025-07-23 23:03:15,831 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: defer
+2025-07-23 23:03:15,831 INFO    SenderThread:10064 [sender.py:send_request_defer():610] handle sender defer: 4
+2025-07-23 23:03:15,831 INFO    SenderThread:10064 [sender.py:transition_state():614] send defer: 5
+2025-07-23 23:03:15,831 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: defer
+2025-07-23 23:03:15,831 INFO    HandlerThread:10064 [handler.py:handle_request_defer():172] handle defer: 5
+2025-07-23 23:03:15,831 DEBUG   SenderThread:10064 [sender.py:send():379] send: summary
+2025-07-23 23:03:15,831 INFO    SenderThread:10064 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2025-07-23 23:03:15,831 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: defer
+2025-07-23 23:03:15,831 INFO    SenderThread:10064 [sender.py:send_request_defer():610] handle sender defer: 5
+2025-07-23 23:03:15,831 INFO    SenderThread:10064 [sender.py:transition_state():614] send defer: 6
+2025-07-23 23:03:15,831 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: defer
+2025-07-23 23:03:15,831 INFO    HandlerThread:10064 [handler.py:handle_request_defer():172] handle defer: 6
+2025-07-23 23:03:15,836 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: defer
+2025-07-23 23:03:15,836 INFO    SenderThread:10064 [sender.py:send_request_defer():610] handle sender defer: 6
+2025-07-23 23:03:15,840 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: status_report
+2025-07-23 23:03:15,907 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\wandb-summary.json
+2025-07-23 23:03:15,907 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:03:15,907 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\data\exp_dir\PoseLift\Jul23_2302
+2025-07-23 23:03:15,908 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\data\exp_dir
+2025-07-23 23:03:15,908 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\data
+2025-07-23 23:03:15,908 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\data\exp_dir\PoseLift
+2025-07-23 23:03:16,271 INFO    SenderThread:10064 [sender.py:transition_state():614] send defer: 7
+2025-07-23 23:03:16,271 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: defer
+2025-07-23 23:03:16,271 INFO    HandlerThread:10064 [handler.py:handle_request_defer():172] handle defer: 7
+2025-07-23 23:03:16,271 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: defer
+2025-07-23 23:03:16,271 INFO    SenderThread:10064 [sender.py:send_request_defer():610] handle sender defer: 7
+2025-07-23 23:03:16,836 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: poll_exit
+2025-07-23 23:03:16,921 INFO    Thread-12 :10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\config.yaml
+2025-07-23 23:03:18,292 INFO    SenderThread:10064 [sender.py:transition_state():614] send defer: 8
+2025-07-23 23:03:18,292 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: poll_exit
+2025-07-23 23:03:18,292 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: defer
+2025-07-23 23:03:18,292 INFO    HandlerThread:10064 [handler.py:handle_request_defer():172] handle defer: 8
+2025-07-23 23:03:18,292 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: defer
+2025-07-23 23:03:18,292 INFO    SenderThread:10064 [sender.py:send_request_defer():610] handle sender defer: 8
+2025-07-23 23:03:18,292 INFO    SenderThread:10064 [job_builder.py:build():318] Attempting to build job artifact
+2025-07-23 23:03:18,292 INFO    SenderThread:10064 [job_builder.py:_get_source_type():466] no source found
+2025-07-23 23:03:18,292 INFO    SenderThread:10064 [sender.py:transition_state():614] send defer: 9
+2025-07-23 23:03:18,292 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: defer
+2025-07-23 23:03:18,292 INFO    HandlerThread:10064 [handler.py:handle_request_defer():172] handle defer: 9
+2025-07-23 23:03:18,292 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: defer
+2025-07-23 23:03:18,292 INFO    SenderThread:10064 [sender.py:send_request_defer():610] handle sender defer: 9
+2025-07-23 23:03:18,292 INFO    SenderThread:10064 [dir_watcher.py:finish():358] shutting down directory watcher
+2025-07-23 23:03:18,837 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: poll_exit
+2025-07-23 23:03:18,937 INFO    SenderThread:10064 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:03:18,937 INFO    SenderThread:10064 [dir_watcher.py:finish():388] scan: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files
+2025-07-23 23:03:18,937 INFO    SenderThread:10064 [dir_watcher.py:finish():402] scan save: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\conda-environment.yaml conda-environment.yaml
+2025-07-23 23:03:18,937 INFO    SenderThread:10064 [dir_watcher.py:finish():402] scan save: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\config.yaml config.yaml
+2025-07-23 23:03:18,942 INFO    SenderThread:10064 [dir_watcher.py:finish():402] scan save: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log output.log
+2025-07-23 23:03:18,942 INFO    SenderThread:10064 [dir_watcher.py:finish():402] scan save: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\requirements.txt requirements.txt
+2025-07-23 23:03:18,942 INFO    SenderThread:10064 [dir_watcher.py:finish():402] scan save: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\wandb-metadata.json wandb-metadata.json
+2025-07-23 23:03:18,942 INFO    SenderThread:10064 [dir_watcher.py:finish():402] scan save: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\wandb-summary.json wandb-summary.json
+2025-07-23 23:03:18,952 INFO    SenderThread:10064 [sender.py:transition_state():614] send defer: 10
+2025-07-23 23:03:18,952 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: poll_exit
+2025-07-23 23:03:18,953 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: defer
+2025-07-23 23:03:18,953 INFO    HandlerThread:10064 [handler.py:handle_request_defer():172] handle defer: 10
+2025-07-23 23:03:18,954 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: defer
+2025-07-23 23:03:18,954 INFO    SenderThread:10064 [sender.py:send_request_defer():610] handle sender defer: 10
+2025-07-23 23:03:18,954 INFO    SenderThread:10064 [file_pusher.py:finish():172] shutting down file pusher
+2025-07-23 23:03:19,441 INFO    wandb-upload_0:10064 [upload_job.py:push():131] Uploaded file C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\conda-environment.yaml
+2025-07-23 23:03:19,504 INFO    wandb-upload_1:10064 [upload_job.py:push():131] Uploaded file C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\config.yaml
+2025-07-23 23:03:19,620 INFO    wandb-upload_4:10064 [upload_job.py:push():131] Uploaded file C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\wandb-summary.json
+2025-07-23 23:03:19,622 INFO    wandb-upload_2:10064 [upload_job.py:push():131] Uploaded file C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\output.log
+2025-07-23 23:03:19,622 INFO    wandb-upload_3:10064 [upload_job.py:push():131] Uploaded file C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\files\requirements.txt
+2025-07-23 23:03:19,836 INFO    Thread-11 :10064 [sender.py:transition_state():614] send defer: 11
+2025-07-23 23:03:19,837 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: defer
+2025-07-23 23:03:19,837 INFO    HandlerThread:10064 [handler.py:handle_request_defer():172] handle defer: 11
+2025-07-23 23:03:19,837 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: defer
+2025-07-23 23:03:19,837 INFO    SenderThread:10064 [sender.py:send_request_defer():610] handle sender defer: 11
+2025-07-23 23:03:19,837 INFO    SenderThread:10064 [file_pusher.py:join():178] waiting for file pusher
+2025-07-23 23:03:19,837 INFO    SenderThread:10064 [sender.py:transition_state():614] send defer: 12
+2025-07-23 23:03:19,837 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: defer
+2025-07-23 23:03:19,837 INFO    HandlerThread:10064 [handler.py:handle_request_defer():172] handle defer: 12
+2025-07-23 23:03:19,837 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: defer
+2025-07-23 23:03:19,837 INFO    SenderThread:10064 [sender.py:send_request_defer():610] handle sender defer: 12
+2025-07-23 23:03:19,837 INFO    SenderThread:10064 [file_stream.py:finish():614] file stream finish called
+2025-07-23 23:03:19,852 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: poll_exit
+2025-07-23 23:03:20,657 INFO    SenderThread:10064 [file_stream.py:finish():618] file stream finish is done
+2025-07-23 23:03:20,657 INFO    SenderThread:10064 [sender.py:transition_state():614] send defer: 13
+2025-07-23 23:03:20,657 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: poll_exit
+2025-07-23 23:03:20,659 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: defer
+2025-07-23 23:03:20,659 INFO    HandlerThread:10064 [handler.py:handle_request_defer():172] handle defer: 13
+2025-07-23 23:03:20,659 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: defer
+2025-07-23 23:03:20,659 INFO    SenderThread:10064 [sender.py:send_request_defer():610] handle sender defer: 13
+2025-07-23 23:03:20,659 INFO    SenderThread:10064 [sender.py:transition_state():614] send defer: 14
+2025-07-23 23:03:20,659 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: defer
+2025-07-23 23:03:20,659 INFO    HandlerThread:10064 [handler.py:handle_request_defer():172] handle defer: 14
+2025-07-23 23:03:20,661 DEBUG   SenderThread:10064 [sender.py:send():379] send: final
+2025-07-23 23:03:20,661 DEBUG   SenderThread:10064 [sender.py:send():379] send: footer
+2025-07-23 23:03:20,661 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: defer
+2025-07-23 23:03:20,661 INFO    SenderThread:10064 [sender.py:send_request_defer():610] handle sender defer: 14
+2025-07-23 23:03:20,661 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: poll_exit
+2025-07-23 23:03:20,663 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: poll_exit
+2025-07-23 23:03:20,663 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: server_info
+2025-07-23 23:03:20,663 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: get_summary
+2025-07-23 23:03:20,663 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: sampled_history
+2025-07-23 23:03:20,665 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: internal_messages
+2025-07-23 23:03:20,665 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: poll_exit
+2025-07-23 23:03:20,665 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: poll_exit
+2025-07-23 23:03:20,665 DEBUG   SenderThread:10064 [sender.py:send_request():406] send_request: server_info
+2025-07-23 23:03:20,982 INFO    MainThread:10064 [wandb_run.py:_footer_history_summary_info():3936] rendering history
+2025-07-23 23:03:20,982 INFO    MainThread:10064 [wandb_run.py:_footer_history_summary_info():3968] rendering summary
+2025-07-23 23:03:20,982 INFO    MainThread:10064 [wandb_run.py:_footer_sync_info():3895] logging synced files
+2025-07-23 23:03:20,986 DEBUG   HandlerThread:10064 [handler.py:handle_request():146] handle_request: shutdown
+2025-07-23 23:03:20,986 INFO    HandlerThread:10064 [handler.py:finish():866] shutting down handler
+2025-07-23 23:03:21,669 INFO    WriterThread:10064 [datastore.py:close():296] close: C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_230159-cr35egqc\run-cr35egqc.wandb
+2025-07-23 23:03:21,985 INFO    SenderThread:10064 [sender.py:finish():1546] shutting down sender
+2025-07-23 23:03:21,985 INFO    SenderThread:10064 [file_pusher.py:finish():172] shutting down file pusher
+2025-07-23 23:03:21,985 INFO    SenderThread:10064 [file_pusher.py:join():178] waiting for file pusher

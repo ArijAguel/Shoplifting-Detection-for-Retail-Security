@@ -1,0 +1,38 @@
+2025-07-23 23:25:08,985 INFO    MainThread:19332 [wandb_setup.py:_flush():76] Current SDK version is 0.16.6
+2025-07-23 23:25:08,985 INFO    MainThread:19332 [wandb_setup.py:_flush():76] Configure stats pid to 19332
+2025-07-23 23:25:08,985 INFO    MainThread:19332 [wandb_setup.py:_flush():76] Loading settings from C:\Users\arija\.config\wandb\settings
+2025-07-23 23:25:08,985 INFO    MainThread:19332 [wandb_setup.py:_flush():76] Loading settings from C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\settings
+2025-07-23 23:25:08,985 INFO    MainThread:19332 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2025-07-23 23:25:08,985 INFO    MainThread:19332 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2025-07-23 23:25:08,985 INFO    MainThread:19332 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'train_eval.py', 'program_abspath': 'C:\\Users\\arija\\Desktop\\Anavid\\PoseLift\\STG-NF\\train_eval.py', 'program': 'train_eval.py'}
+2025-07-23 23:25:08,985 INFO    MainThread:19332 [wandb_setup.py:_flush():76] Applying login settings: {}
+2025-07-23 23:25:08,985 INFO    MainThread:19332 [wandb_init.py:_log_setup():521] Logging user logs to C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_232508-1ivylvcv\logs\debug.log
+2025-07-23 23:25:08,985 INFO    MainThread:19332 [wandb_init.py:_log_setup():522] Logging internal logs to C:\Users\arija\Desktop\Anavid\PoseLift\STG-NF\wandb\run-20250723_232508-1ivylvcv\logs\debug-internal.log
+2025-07-23 23:25:08,985 INFO    MainThread:19332 [wandb_init.py:init():561] calling init triggers
+2025-07-23 23:25:08,985 INFO    MainThread:19332 [wandb_init.py:init():568] wandb.init called with sweep_config: {}
+config: {'dataset': 'PoseLift', 'seed': 999, 'device': 'cpu', 'model_lr': 0.0005, 'epochs': 8, 'model_optimizer': 'adamx', 'model_sched': 'exp_decay'}
+2025-07-23 23:25:08,985 INFO    MainThread:19332 [wandb_init.py:init():611] starting backend
+2025-07-23 23:25:08,985 INFO    MainThread:19332 [wandb_init.py:init():615] setting up manager
+2025-07-23 23:25:09,003 INFO    MainThread:19332 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=spawn, using: spawn
+2025-07-23 23:25:09,006 INFO    MainThread:19332 [wandb_init.py:init():623] backend started and connected
+2025-07-23 23:25:09,007 INFO    MainThread:19332 [wandb_init.py:init():715] updated telemetry
+2025-07-23 23:25:09,007 INFO    MainThread:19332 [wandb_init.py:init():748] communicating run to backend with 90.0 second timeout
+2025-07-23 23:25:11,697 INFO    MainThread:19332 [wandb_run.py:_on_init():2357] communicating current version
+2025-07-23 23:25:12,466 INFO    MainThread:19332 [wandb_run.py:_on_init():2366] got version response upgrade_message: "wandb version 0.21.0 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2025-07-23 23:25:12,466 INFO    MainThread:19332 [wandb_init.py:init():799] starting run threads in backend
+2025-07-23 23:25:15,083 INFO    MainThread:19332 [wandb_run.py:_console_start():2335] atexit reg
+2025-07-23 23:25:15,083 INFO    MainThread:19332 [wandb_run.py:_redirect():2190] redirect: wrap_raw
+2025-07-23 23:25:15,083 INFO    MainThread:19332 [wandb_run.py:_redirect():2255] Wrapping output streams.
+2025-07-23 23:25:15,084 INFO    MainThread:19332 [wandb_run.py:_redirect():2280] Redirects installed.
+2025-07-23 23:25:15,085 INFO    MainThread:19332 [wandb_init.py:init():842] run started, returning control to user process
+2025-07-23 23:25:15,085 INFO    MainThread:19332 [wandb_run.py:_config_callback():1347] config_cb None None {'actual_seed': 832317543300}
+2025-07-23 23:25:29,434 INFO    MainThread:19332 [wandb_run.py:_config_callback():1347] config_cb None None {'pose_shape': [2, 24, 18], 'hidden_channels': 0, 'K': 8, 'L': 1, 'R': 3.0, 'actnorm_scale': 1.0, 'flow_permutation': 'permute', 'flow_coupling': 'affine', 'LU_decomposed': True, 'learn_top': False, 'edge_importance': False, 'temporal_kernel_size': None, 'strategy': 'uniform', 'max_hops': 8, 'device': 'cpu'}
+2025-07-23 23:25:29,465 INFO    MainThread:19332 [wandb_run.py:_config_callback():1347] config_cb None None {'model_parameters': 0.616, 'train_samples': 22536, 'test_samples': 2942}
+2025-07-23 23:33:22,958 INFO    MainThread:19332 [wandb_run.py:_finish():2064] finishing run arij-aguel02-insat/STG-NF-PoseLift/1ivylvcv
+2025-07-23 23:33:22,958 INFO    MainThread:19332 [wandb_run.py:_atexit_cleanup():2304] got exitcode: 0
+2025-07-23 23:33:22,958 INFO    MainThread:19332 [wandb_run.py:_restore():2287] restore
+2025-07-23 23:33:22,958 INFO    MainThread:19332 [wandb_run.py:_restore():2293] restore done
+2025-07-23 23:33:29,879 INFO    MainThread:19332 [wandb_run.py:_footer_history_summary_info():3936] rendering history
+2025-07-23 23:33:29,881 INFO    MainThread:19332 [wandb_run.py:_footer_history_summary_info():3968] rendering summary
+2025-07-23 23:33:29,882 INFO    MainThread:19332 [wandb_run.py:_footer_sync_info():3895] logging synced files
