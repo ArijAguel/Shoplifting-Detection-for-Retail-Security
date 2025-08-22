@@ -1,1 +1,0 @@
-{"columns": ["Metric", "Value"], "data": [["AUC-ROC", 0.6252668971902575], ["AUC-PR", 0.8168228514417639], ["EER", 0.4485006518904824], ["EER Threshold", -2.6161109866918], ["Test Samples", 4846]]}
