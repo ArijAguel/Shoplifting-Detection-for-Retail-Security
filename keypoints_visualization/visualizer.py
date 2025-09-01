@@ -12,7 +12,7 @@ class KeypointVisualizer:
     def draw_keypoints(
         self,
         frame: np.ndarray,
-        keypoints_list: List[List[float]],
+        keypoints_list: List[float],  # now it's a flat list
         connections: Optional[List[Tuple[int, int]]] = None,
         color: Tuple[int, int, int] = (0, 255, 0),
         radius: int = 4,
@@ -22,8 +22,10 @@ class KeypointVisualizer:
         """Draw keypoints and skeleton lines on a frame."""
         overlay = frame.copy()
         points = []
-        for kp in keypoints_list:
-            x, y, conf = kp
+
+        # iterate in steps of 3: (x, y, conf)
+        for i in range(0, len(keypoints_list), 3):
+            x, y, conf = keypoints_list[i], keypoints_list[i+1], keypoints_list[i+2]
             if conf > 0:
                 cv2.circle(overlay, (int(x), int(y)), radius, color, -1)
                 points.append((int(x), int(y)))
@@ -31,8 +33,9 @@ class KeypointVisualizer:
                 points.append(None)
 
         connections = connections or self.skeleton
-        max_kp = len(keypoints_list)
+        max_kp = len(points)
 
+        # draw skeleton lines
         for idx1, idx2 in connections:
             if idx1 < max_kp and idx2 < max_kp:
                 pt1, pt2 = points[idx1], points[idx2]
@@ -82,6 +85,15 @@ class KeypointVisualizer:
             for person_id, frames in detections.items():
                 if frame_key in frames:
                     keypoints_list = frames[frame_key]['keypoints']
+                    # denormalize flat keypoints: [x0, y0, c0, x1, y1, c1, ...]
+                    keypoints_list = keypoints_list.copy()  # avoid modifying original
+                    for i in range(0, len(keypoints_list), 3):
+                        #for normalised poses
+                        keypoints_list[i]     *= width   # x
+                        keypoints_list[i + 1] *= height  # y
+
+                        # keypoints_list[i + 2] is confidence, leave it as is
+
                     frame = self.draw_keypoints(frame, keypoints_list,
                                                 color=marker_color, alpha=alpha)
 
