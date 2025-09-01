@@ -52,8 +52,8 @@ def main():
     in_path = os.path.join(cfg['root_output'], 'matched_annotations')
     out_path = os.path.join(cfg['root_output'], 'padded_json_folder')
     postprocessor = TrackPostProcessor(
-        input_folder="C:/Users/arija/Desktop/SL/keypoints_annotation/results/matched_annotations",
-        output_folder="C:/Users/arija/Desktop/SL/keypoints_annotation/results/padded_json_folder",
+        input_folder="results/matched_annotations",
+        output_folder="results/padded_json_folder",
         total_frames=30
     )
     postprocessor.process_all_files()

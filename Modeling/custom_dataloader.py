@@ -144,7 +144,7 @@ def get_dataset_and_loader(args, trans_list, only_test=False):
                                  trans_list= dataset_args['trans_list'])
 
         else :
-            annotations_path = "C:/Users/arija/Desktop/SL/SL_Skeleton-based-detection/keypoints_annotation/results/RGB_annotation.json"
+            annotations_path = "keypoints_annotation/results/RGB_annotation.json"
             dataset[split] = PoseDatasetWithAugmentation(args.pose_path[split], 
                                 evaluate=evaluate,
                                 path_to_annotation_file=annotations_path,

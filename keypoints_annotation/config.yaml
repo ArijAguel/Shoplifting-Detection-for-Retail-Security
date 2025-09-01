@@ -1,8 +1,8 @@
-root_path: "C:/Users/arija/Desktop/SL/data/test_data/clips"
-tracker_type: "C:/Users/arija/Desktop/SL/keypoints_annotation/botsort.yaml"
-input_dataset: "C:/Users/arija/Desktop/SL/data/test_data/data_sample.csv"
-model_path: "C:/Users/arija/Desktop/SL/keypoints_annotation/yolov8m-pose.pt"
+root_path: "data/test_data/clips"
+tracker_type: "botsort.yaml"
+input_dataset: "data/test_data/annotation.csv"
+model_path: "yolov8m-pose.pt"
 sliding_window: 30
 min_track_length: 5
 max_persons: 5
-root_output: "C:/Users/arija/Desktop/SL/keypoints_annotation/results"
+root_output: "results"

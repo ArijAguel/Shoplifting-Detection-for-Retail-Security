@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
 
 
-df = pd.read_csv("C:/Users/arija/Desktop/SL/Testing_data/test_data/predictions.csv")
+df = pd.read_csv("data/test_data/predictions.csv")
 df["ground_truth"] = df["class_"].apply(lambda x: 0 if x in [1, 2] else 1)
 
 y_true = df["ground_truth"]
