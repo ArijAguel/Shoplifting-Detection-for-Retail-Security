@@ -49,6 +49,8 @@ def main():
     )
 
     matcher.match_tracks()
+    in_path = os.path.join(cfg['root_output'], 'matched_annotations')
+    out_path = os.path.join(cfg['root_output'], 'padded_json_folder')
     postprocessor = TrackPostProcessor(
         input_folder="/home/stage/SL_Skeleton-based-detection/keypoints_annotation/results/matched_annotations",
         output_folder="/home/stage/SL_Skeleton-based-detection/keypoints_annotation/results/padded_json_folder",

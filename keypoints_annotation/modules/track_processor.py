@@ -40,9 +40,9 @@ class TrackPostProcessor:
                     else:
                         closest_frame = frame_ids[0]
                     idx = frame_ids.index(closest_frame)
-                    kp = keypoints_list[idx]
+                    kp = keypoints_list[idx] 
 
-                padded_person[str(i)] = {"keypoints": kp}
+                padded_person[str(i)] = {"keypoints": [x for sublist in kp for x in sublist]}  # flatten keypoints
 
             padded_tracks[str(track_id)] = padded_person
         return padded_tracks
@@ -60,6 +60,8 @@ class TrackPostProcessor:
             track_history[track_id] = []
             for frame_id, frame_data in frames.items():
                 keypoints = frame_data["keypoints"]
+                
+
                 track_history[track_id].append((int(frame_id), keypoints))
 
         # Pad

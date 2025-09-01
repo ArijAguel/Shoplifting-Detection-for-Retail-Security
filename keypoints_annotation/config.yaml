@@ -1,8 +1,8 @@
-root_path: "/home/stage/Testing_data/test_data/clips"
-tracker_type: "/home/stage/SL_Skeleton-based-detection/keypoints_annotation/botsort.yaml"
-input_dataset: "/home/stage/Testing_data/test_data/data_sample.csv"
-model_path: "/home/stage/SL_Skeleton-based-detection/keypoints_annotation/yolov8m-pose.pt"
+root_path: "C:/Users/arija/Desktop/SL/Testing_data/test_data/clips"
+tracker_type: "C:/Users/arija/Desktop/SL/SL_Skeleton-based-detection/keypoints_annotation/botsort.yaml"
+input_dataset: "C:/Users/arija/Desktop/SL/Testing_data/test_data/data_sample.csv"
+model_path: "C:/Users/arija/Desktop/SL/SL_Skeleton-based-detection/keypoints_annotation/yolov8m-pose.pt"
 sliding_window: 30
 min_track_length: 5
 max_persons: 5
-root_output: "/home/stage/SL_Skeleton-based-detection/keypoints_annotation/results"
+root_output: "C:/Users/arija/Desktop/SL/SL_Skeleton-based-detection/keypoints_annotation/results"

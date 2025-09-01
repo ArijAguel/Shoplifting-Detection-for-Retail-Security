@@ -50,6 +50,7 @@ class YOLOPoseTracker:
             # Store normalized bboxes (original from CSV)
             if clip_key not in annotations:
                 annotations[clip_key] = {}
+            
             if row.id not in annotations[clip_key]:
                 annotations[clip_key][row.id] = {
                     "bbox": [row.box0, row.box1, row.box2, row.box3],  # Already normalized
@@ -87,9 +88,14 @@ class YOLOPoseTracker:
                 # get keypoints
                 keypoints = []
                 normalized_keypoints = [] 
+                #if result.keypoints is not None and result.keypoints.xy is not None and result.keypoints.conf is not None:
                 if result.keypoints is not None and len(result.keypoints) > 0:
                     xy = result.keypoints.xy.cpu().numpy()
-                    conf = result.keypoints.conf.cpu().numpy()
+                    if result.keypoints.conf is None:
+                        conf = np.zeros((xy.shape[0], xy.shape[1]), dtype=np.float32)
+                    else:
+                        conf = result.keypoints.conf.cpu().numpy()
+
                     
                     # Raw keypoints
                     keypoints = np.concatenate([xy, conf[..., None]], axis=-1).tolist()
@@ -107,6 +113,7 @@ class YOLOPoseTracker:
                     if track_id not in normalized_clip_results:
                         normalized_clip_results[track_id] = {}
 
+                 
                     # Raw data
                     clip_results[track_id][frame_id] = {
                         'keypoints': keypoints[i] if i < len(keypoints) else None,

@@ -24,7 +24,7 @@ def init_sub_args(args):
                          'test':  os.path.join(args.data_dir, dataset, 'test/frames/')}
 
         args.pose_path = {'train': os.path.join(args.data_dir, dataset, 'pose', 'train/'),
-                          'test': "split_keypoints" } #os.path.join(args.data_dir, dataset, 'pose', 'test/')
+                          'test': "/home/stage/SL_Skeleton-based-detection/keypoints_annotation/results/padded_json_folder" } #os.path.join(args.data_dir, dataset, 'pose', 'test/')
     args.pose_path["train_abnormal"] = args.pose_path_train_abnormal
     args.ckpt_dir = None
     model_args = args_rm_prefix(args, 'model_')
@@ -38,7 +38,7 @@ def init_parser(default_data_dir='data/', default_exp_dir='data/exp_dir'):
     parser.add_argument('--pose_path_train_abnormal', type=str, default=None, help='Path to training vids')
     parser.add_argument('--pose_path_train', type=str, default="data\PoseLift", help='Path to training pose')
     parser.add_argument('--vid_path_test', type=str, default=None, help='Path to test vids')
-    parser.add_argument('--pose_path_test', type=str, default="data\PoseLift", help='Path to test pose')
+    parser.add_argument('--pose_path_test', type=str, default="/home/stage/SL_Skeleton-based-detection/keypoints_annotation/results/padded_json_folder", help='Path to test pose')
     parser.add_argument('--dataset', type=str, default='PoseLift', 
                         choices=['ShanghaiTech', 'ShanghaiTech-HR', 'UBnormal', 'PoseLift'], help='Dataset for Eval')
     parser.add_argument('--vid_res', type=str, default=None, help='Video Res')

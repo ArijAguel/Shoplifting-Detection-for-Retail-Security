@@ -9,7 +9,7 @@ from utils.data_utils import trans_list
 from utils.optim_init import init_optimizer, init_scheduler
 from args import create_exp_dirs
 from args import init_parser, init_sub_args
-from test_dataset import get_dataset_and_loader
+from custom_dataloader import get_dataset_and_loader
 from utils.train_utils import dump_args, init_model_params
 from utils.train_utils import calc_num_of_params
 
@@ -22,10 +22,10 @@ def main():
     '--device', 'cpu',
     '--temporal_kernel', '11',
     '--num_workers', '2',
-    '--exp_dir', '/content/experiment',
+    '--exp_dir', '/home/stage/SL_Skeleton-based-detection/Modeling/experiment',
     '--seg_len', '30',
     '--seg_stride', '4',
-    '--checkpoint', 'C:/Users/ASUS/Downloads/Aug11_1146__checkpoint.pth.tar'
+    '--checkpoint', '/home/stage/SL_Skeleton-based-detection/Modeling/Aug11_1146__checkpoint.pth.tar'
     ]
     )
 
@@ -48,7 +48,7 @@ def main():
         np.random.seed(0)
 
     args, model_args = init_sub_args(args)
-    #args.ckpt_dir = create_exp_dirs(args.exp_dir, dirmap=args.dataset)
+    args.ckpt_dir = create_exp_dirs(args.exp_dir, dirmap=args.dataset)
 
     pretrained = vars(args).get('checkpoint', None)
     
@@ -64,11 +64,11 @@ def main():
             break
     labels=list()
     for data,trans_index,scores, label in loader['test']:
-        print("IN TEST MODE")
-        print(f"SHAPE OF DATA IS {data.shape}\n")
-        print(f"SHAPE OF TRANS_INDEX IS {trans_index.shape}\n")
-        print(f"SHAPE OF SCORES IS {scores.shape}\n")
-        print(f"SHAPE OF LABELS IS {label.shape}\n")
+    #    print("IN TEST MODE")
+    #    print(f"SHAPE OF DATA IS {data.shape}\n")
+    #    print(f"SHAPE OF TRANS_INDEX IS {trans_index.shape}\n")
+    #    print(f"SHAPE OF SCORES IS {scores.shape}\n")
+    #    print(f"SHAPE OF LABELS IS {label.shape}\n")
         labels.extend(label)
 
     print(f"LENTH OF LABELS IS {len(labels)}")
@@ -89,9 +89,11 @@ def main():
         dump_args(args, args.ckpt_dir)
     #Testing and scoring:
     normality_scores = trainer.test()
-    
+    assert not np.all(normality_scores == 1), "Error: Normality score is all ones!"
+    assert not np.all(normality_scores == 0), "Error: Normality score is all zeros!"
+
     print( f"SHAPE OF NORMALITY SCORES IS {normality_scores.shape}" )
-    print(f"NORMALITY SCORES IS {normality_scores}")
+    #print(f"NORMALITY SCORES IS {normality_scores}")
 
 
 

@@ -2,9 +2,9 @@ import os
 import re
 import numpy as np
 from scipy.ndimage import gaussian_filter1d
-from sklearn.metrics import roc_auc_score
+from sklearn.metrics import roc_auc_score, precision_recall_curve, auc
 from tqdm import tqdm
-
+import pandas as pd
 #from sklearn.metrics import roc_auc_score, precision_recall_curve, roc_curve,auc
 import csv
 #from sklearn.metrics import roc_auc_score, precision_recall_curve, auc as auc_func
@@ -13,26 +13,39 @@ import csv
 from sklearn.metrics import roc_auc_score, precision_recall_curve, roc_curve,auc
 
 
-def score_auc(scores_np, gt):
-    auc_roc= roc_auc_score(gt, scores_np)   #Area Under the ROC Curve
-    #precision, recall, _ = precision_recall_curve(gt, scores_np)
-    #auc_pr = auc_func(recall, precision)
-    # auc_pr = average_precision_score(gt, scores_np)
-    # fpr, tpr, thresholds = roc_curve(gt, scores_np)  # Get FPR, TPR, thresholds from ROC curve
-    # fnr = 1 - tpr  # False Negative Rate = 1 - True Positive Rate
+def score_auc(scores_np, gt, filenames, save_csv_path="predictions.csv"):
+   
 
-    # # Calculate EER where FPR equals FNR
-    # eer_index = np.nanargmin(np.abs(fnr - fpr))  # Find index where FPR = FNR
-    # eer_threshold = thresholds[eer_index]  # Threshold at which EER occurs
-    # eer = fpr[eer_index]  # Equal Error Rate (where FPR = FNR)
-    # return auc, auc_pr, eer, eer_threshold
+    # 1️⃣ Compute AUC-ROC
+    auc_roc = roc_auc_score(gt, scores_np)
+
+    # 2️⃣ Compute Precision-Recall and AUC-PR
     precision, recall, thresholds = precision_recall_curve(gt, scores_np)
-    auc_precision_recall = auc(recall, precision)
-    fpr, tpr, threshold = roc_curve(gt, scores_np, pos_label=1)
-    fnr = 1 - tpr
-    #eer_threshold = threshold[np.nanargmin(np.absolute((fnr - fpr)))]
-    #eer = fpr[np.nanargmin(np.absolute((fnr - fpr)))]
-    return auc_roc, auc_precision_recall#, eer, eer_threshold
+    auc_pr = auc(recall, precision)
+
+    # 3️⃣ Find best threshold (maximize F1-score)
+    f1_scores = 2 * (precision[:-1] * recall[:-1]) / (precision[:-1] + recall[:-1] + 1e-8)
+    best_idx = np.argmax(f1_scores)
+    best_threshold = thresholds[best_idx]
+
+    # 4️⃣ Convert scores to binary predictions using best threshold
+    predictions = (scores_np >= best_threshold).astype(int)
+
+    # 5️⃣ Prepare CSV data
+    data = []
+    for fname, gt_val, pred_val in zip(filenames, gt, predictions):
+        # Correctly split filename: clipName_videoID_pPersonID
+        parts = fname.rsplit("_", 2)  # split from right
+        clip_id = parts[0]
+        video_id = parts[1]
+        person_id = parts[2][1:]  # remove leading 'p'
+        data.append([clip_id, video_id, person_id, gt_val, pred_val])
+
+    df = pd.DataFrame(data, columns=["clip_id", "video_id", "person_id", "ground_truth", "prediction"])
+    df.to_csv(save_csv_path, index=False)
+
+    print(f"CSV saved at {save_csv_path}, Best threshold: {best_threshold:.4f}")
+    return auc_roc, auc_pr  # , best_threshold if needed
 
 def smooth_scores(scores_arr, sigma=7):
     for s in range(len(scores_arr)):

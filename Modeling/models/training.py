@@ -153,25 +153,31 @@ class Trainer:
         self.model.to(self.args.device)
         pbar = tqdm(self.test_loader)
         probs = torch.empty(0).to(self.args.device)
+        gt_labels = []
+        filenames = []
         print("Starting Test Eval")
         for itern, data_arr in enumerate(pbar):
-            data = [data.to(self.args.device, non_blocking=True) for data in data_arr]
-            #print(f"LENGHT of data is {len(data)}")
-            #print(f"SHAPE OF DATA ARR OF 0 IS {data_arr[0].shape}")
-            score = data[-2].amin(dim=-1)
-            #print(f"SHAPE OF SCORE IS {score.shape}")
+            poses, scores, labels, fnames = data_arr
+
+            poses = poses.to(self.args.device, non_blocking=True)
+            scores = scores.to(self.args.device, non_blocking=True)
+            labels = labels.to(self.args.device, non_blocking=True)
+            
+            score = scores.amin(dim=-1)
             if self.args.model_confidence:
-                samp = data[0]
+                samp = poses
             else:
-                samp = data[0][:, :2]
+                samp = poses[:, :2]
             with torch.no_grad():
-                z, nll = self.model(samp.float(), label=torch.ones(data[0].shape[0]), score=score)
+                z, nll = self.model(samp.float(), label=torch.ones(poses.shape[0]), score=score)
             if self.args.model_confidence:
                 nll = nll * score
             probs = torch.cat((probs, -1 * nll), dim=0)
-        prob_mat_np = probs.cpu().detach().numpy().squeeze().copy(order='C')
-        #print( f"SHAPE OF PROB MAT NP IS {prob_mat_np.shape}")
-        return prob_mat_np
+            gt_labels.extend(labels.cpu().numpy())
+            filenames.extend(fnames)
+        prob_mat_np = probs.cpu().numpy().squeeze().copy(order='C')
+        labels_np = np.array(gt_labels)
+        return prob_mat_np, labels_np, filenames
 
     def gen_checkpoint_state(self, epoch):
         checkpoint_state = {'epoch': epoch + 1,

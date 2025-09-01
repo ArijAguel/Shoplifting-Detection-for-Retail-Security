@@ -139,7 +139,7 @@ def normalize_pose(pose_data, **kwargs):
     :return:
     """
     vid_res = kwargs.get('vid_res', [856, 480])
-    print(f"VID RES IS {vid_res}")
+    #print(f"VID RES IS {vid_res}")
     symm_range = kwargs.get('symm_range', False)
     # sub_mean = kwargs.get('sub_mean', True)
     # scale = kwargs.get('scale', False)
