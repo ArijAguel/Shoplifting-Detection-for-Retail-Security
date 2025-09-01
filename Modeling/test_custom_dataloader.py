@@ -22,10 +22,10 @@ def main():
     '--device', 'cpu',
     '--temporal_kernel', '11',
     '--num_workers', '2',
-    '--exp_dir', '/home/stage/SL_Skeleton-based-detection/Modeling/experiment',
+    '--exp_dir', 'C:/Users/arija/Desktop/SL/Modeling/experiment',
     '--seg_len', '30',
     '--seg_stride', '4',
-    '--checkpoint', '/home/stage/SL_Skeleton-based-detection/Modeling/Aug11_1146__checkpoint.pth.tar'
+    '--checkpoint', 'C:/Users/arija/Desktop/SL/Modeling/Aug11_1146__checkpoint.pth.tar'
     ]
     )
 
