@@ -26,7 +26,7 @@ class PoseDatasetWithAugmentation(Dataset):
         self.pose_data = []   
         self.labels = []      
         self.filenames = []   # store full filenames
-        if evaluate :
+        
         with open(self.annotations, 'r') as an:
             annotations = json.load(an)
 
@@ -58,7 +58,7 @@ class PoseDatasetWithAugmentation(Dataset):
                 s = video_id.replace("padded_", "")
 
                 # Mapping the labels
-                if annotations[f"{s}/{clip_id}"][person_id]["class_"] in [1, 2]:
+                if annotations[f"{s}/{clip_id}"][person_id]["class"] in [1, 2]:
                     self.labels.append(0)  # normal
                 else:
                     self.labels.append(1)  # abnormal
@@ -137,14 +137,14 @@ def get_dataset_and_loader(args, trans_list, only_test=False):
         dataset_args['seg_stride'] = args.seg_stride if split == 'train' else 1  # No strides for test set
         dataset_args['vid_path'] = args.vid_path[split]
         if not evaluate :
-            
+            annotations_path="/home/keypoints_annotation/Train_data_results/RGB_annotation.json"
             dataset[split] = PoseDatasetWithAugmentation(args.pose_path[split], 
                                 evaluate=evaluate,
                                 path_to_annotation_file=annotations_path,
                                  trans_list= dataset_args['trans_list'])
 
         else :
-            annotations_path = "keypoints_annotation/results/RGB_annotation.json"
+            annotations_path="/home/keypoints_annotation/Test_data_results/RGB_annotation.json"
             dataset[split] = PoseDatasetWithAugmentation(args.pose_path[split], 
                                 evaluate=evaluate,
                                 path_to_annotation_file=annotations_path,

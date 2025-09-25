@@ -105,35 +105,63 @@ class Trainer:
         checkpoint_filename = time_str + '_checkpoint.pth.tar'
         start_epoch = 0
         num_epochs = self.args.epochs
-        self.model.train()
+
         self.model = self.model.to(self.args.device)
+        self.model.train()
+
         key_break = False
         for epoch in range(start_epoch, num_epochs):
             if key_break:
                 break
             print("Starting Epoch {} / {}".format(epoch + 1, num_epochs))
+
             pbar = tqdm(self.train_loader)
             for itern, data_arr in enumerate(pbar):
                 try:
-                    data = [data.to(self.args.device, non_blocking=True) for data in data_arr]
-                    score = data[-2].amin(dim=-1)
-                    label = data[-1]
+                    # --- Unpack dataset batch ---
+                    poses, scores, labels, filenames = data_arr
+
+                    # --- Move tensors to device ---
+                    poses = poses.to(self.args.device, non_blocking=True)
+                    scores = scores.to(self.args.device, non_blocking=True)
+                    labels = labels.to(self.args.device, non_blocking=True)
+                    # filenames stays on CPU (list of str)
+
+                    # --- Prepare inputs ---
+                    score = scores.amin(dim=-1)  # [batch]
+                    label = labels
+                    #print(f"SCORE IS {score}")
+                    #print(f"LABEL IS {label}")
+
                     if self.args.model_confidence:
-                        samp = data[0]
+                        samp = poses
                     else:
-                        samp = data[0][:, :2]
+                        samp = poses[:, :2]  # drop confidence channel
+
+                    # --- Forward + Loss ---
                     z, nll = self.model(samp.float(), label=label, score=score)
                     if nll is None:
                         continue
+
                     if self.args.model_confidence:
                         nll = nll * score
+
                     losses = compute_loss(nll, reduction="mean")["total_loss"]
+
+                    # --- Backprop ---
                     losses.backward()
                     torch.nn.utils.clip_grad_norm_(self.model.parameters(), clip)
                     self.optimizer.step()
                     self.optimizer.zero_grad()
-                    pbar.set_description("Loss: {}".format(losses.item()))
-                    log_writer.add_scalar('NLL Loss', losses.item(), epoch * len(self.train_loader) + itern)
+
+                    # --- Logging ---
+                    pbar.set_description("Loss: {:.4f}".format(losses.item()))
+                    if log_writer is not None:
+                        log_writer.add_scalar(
+                            'NLL Loss',
+                            losses.item(),
+                            epoch * len(self.train_loader) + itern
+                        )
 
                 except KeyboardInterrupt:
                     print('Keyboard Interrupted. Save results? [yes/no]')
@@ -144,9 +172,19 @@ class Trainer:
                     else:
                         exit(1)
 
+                except Exception as e:
+                    # Catch unexpected runtime errors but continue training
+                    print(f"[ERROR] Iter {itern}, Epoch {epoch+1}: {repr(e)}")
+                    traceback.print_exc()
+                    continue
+
+            # --- Save checkpoint & adjust LR ---
             self.save_checkpoint(epoch, filename=checkpoint_filename)
             new_lr = self.adjust_lr(epoch)
             print('Checkpoint Saved. New LR: {0:.3e}'.format(new_lr))
+
+
+
 
     def test(self):
         self.model.eval()

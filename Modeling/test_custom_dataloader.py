@@ -1,8 +1,8 @@
 import random
 import numpy as np
 import torch
-from utils.scoring_utils import score_auc
-#from torch.utils.tensorboard import SummaryWriter
+from utils.scoring_utils import score_auc, adjusted_score_auc
+from torch.utils.tensorboard import SummaryWriter
 from models.STG_NF.model_pose import STG_NF
 from models.training import Trainer
 from utils.data_utils import trans_list
@@ -22,10 +22,10 @@ def main():
     '--device', 'cpu',
     '--temporal_kernel', '11',
     '--num_workers', '2',
-    '--exp_dir', 'Modeling/experiment',
+    #'--exp_dir', '/home/Modeling/experiment',
     '--seg_len', '30',
     '--seg_stride', '4',
-    '--checkpoint', 'Modeling/Aug11_1146__checkpoint.pth.tar'
+    #'--checkpoint', '/home/Modeling/Aug11_1146__checkpoint.pth.tar'
     ]
     )
 
@@ -54,24 +54,8 @@ def main():
     
     dataset, loader = get_dataset_and_loader(args, trans_list=trans_list, only_test=(pretrained is not None))
 
-    if loader['train']:
-        for data, trans_index, segs_score, label in loader['train']:
-            print("IN TRAIN MODE")
-            print(f"SHAPE OF DATA IS {data.shape}\n")
-            print(f"SHAPE OF TRANS_INDEX IS {trans_index.shape}\n")
-            print(f"SHAPE OF SEGS_SCORE IS {segs_score.shape}\n")
-            print(f"SHAPE OF LABEL IS {label.shape}\n")
-            break
-    labels=list()
-    for data,trans_index,scores, label in loader['test']:
-    #    print("IN TEST MODE")
-    #    print(f"SHAPE OF DATA IS {data.shape}\n")
-    #    print(f"SHAPE OF TRANS_INDEX IS {trans_index.shape}\n")
-    #    print(f"SHAPE OF SCORES IS {scores.shape}\n")
-    #    print(f"SHAPE OF LABELS IS {label.shape}\n")
-        labels.extend(label)
-
-    print(f"LENTH OF LABELS IS {len(labels)}")
+    
+   
 
     model_args = init_model_params(args, dataset)
     model = STG_NF(**model_args)
@@ -84,29 +68,25 @@ def main():
     if pretrained:
         trainer.load_checkpoint(pretrained)
     else:
-        #writer = SummaryWriter()
-        #trainer.train(log_writer=writer)
+        writer = SummaryWriter()
+        trainer.train(log_writer=writer)
         dump_args(args, args.ckpt_dir)
     #Testing and scoring:
-    normality_scores = trainer.test()
-    assert not np.all(normality_scores == 1), "Error: Normality score is all ones!"
-    assert not np.all(normality_scores == 0), "Error: Normality score is all zeros!"
-
+    normality_scores, gt_arr, filenames = trainer.test()
+    
     print( f"SHAPE OF NORMALITY SCORES IS {normality_scores.shape}" )
-    #print(f"NORMALITY SCORES IS {normality_scores}")
-
-
-
+    print(f"NORMALITY SCORES IS {normality_scores}")
     #auc_roc, scores_np, auc_pr, eer, eer_threshold = score_dataset(normality_scores, dataset["test"].metadata, args=args)
-    auc_roc, auc_pr= score_auc(normality_scores, labels)
+    auc_roc, auc_pr, best_threshold = adjusted_score_auc(normality_scores, gt_arr, filenames)
     # Logging and recording results
     print("\n-------------------------------------------------------")
     print('auc(roc): {}'.format(auc_roc))
     print('auc(pr): {}'.format(auc_pr))
+    print('Best threshold (ROC-based): {}'.format(best_threshold))
+    print("-------------------------------------------------------\n")
     #print('eer: {}'.format(eer))
     #print('eer threshold: {}'.format(eer_threshold))
     #print('Number of samples', scores_np.shape[0])
-
 
 
 

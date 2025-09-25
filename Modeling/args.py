@@ -20,11 +20,11 @@ def init_sub_args(args):
         args.pose_path = {'train': args.pose_path_train,
                           'test': args.pose_path_test}
     else:
-        args.vid_path = {'train': os.path.join(args.data_dir, dataset, 'train/images/'),
-                         'test':  os.path.join(args.data_dir, dataset, 'test/frames/')}
+        args.vid_path = {'train': "/data/train_data/clips",
+                         'test':  "/data/test_data/clips"}
 
-        args.pose_path = {'train': os.path.join(args.data_dir, dataset, 'pose', 'train/'),
-                          'test': "keypoints_annotation/results/padded_json_folder" } #os.path.join(args.data_dir, dataset, 'pose', 'test/')
+        args.pose_path = {'train': "/home/keypoints_annotation/Train_data_results/padded_json_folder",
+                          'test': "/home/keypoints_annotation/Test_data_results/padded_json_folder" } #os.path.join(args.data_dir, dataset, 'pose', 'test/')
     args.pose_path["train_abnormal"] = args.pose_path_train_abnormal
     args.ckpt_dir = None
     model_args = args_rm_prefix(args, 'model_')
@@ -36,9 +36,9 @@ def init_parser(default_data_dir='data/', default_exp_dir='data/exp_dir'):
     # General Args
     parser.add_argument('--vid_path_train', type=str, default=None, help='Path to training vids')
     parser.add_argument('--pose_path_train_abnormal', type=str, default=None, help='Path to training vids')
-    parser.add_argument('--pose_path_train', type=str, default="data\PoseLift", help='Path to training pose')
+    parser.add_argument('--pose_path_train', type=str, default="/home/keypoints_annotation/Train_data_results/padded_json_folder", help='Path to training pose')
     parser.add_argument('--vid_path_test', type=str, default=None, help='Path to test vids')
-    parser.add_argument('--pose_path_test', type=str, default="keypoints_annotation/results/padded_json_folder", help='Path to test pose')
+    parser.add_argument('--pose_path_test', type=str, default="/home/keypoints_annotation/sample_results/padded_json_folder", help='Path to test pose')
     parser.add_argument('--dataset', type=str, default='PoseLift', 
                         choices=['ShanghaiTech', 'ShanghaiTech-HR', 'UBnormal', 'PoseLift'], help='Dataset for Eval')
     parser.add_argument('--vid_res', type=str, default=None, help='Video Res')
